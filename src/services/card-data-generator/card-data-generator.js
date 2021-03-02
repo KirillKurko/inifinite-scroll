@@ -26,7 +26,7 @@ export default class CardDataGenerator {
     }
 
     generateText = (wordsLength) => {
-        return randomSentence({wordsLength});
+        return randomSentence({words: wordsLength});
     }
 
     generateDate = () => {
