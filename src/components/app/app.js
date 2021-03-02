@@ -4,7 +4,6 @@ import Card from "../card";
 import CardDataGenerator from "../../services/card-data-generator";
 
 import "./app.css";
-
 export default class App extends Component {
 
     cardDataGenerator = new CardDataGenerator();
@@ -25,14 +24,16 @@ export default class App extends Component {
 
     render() {
         const {cardsData} = this.state;
+        console.log(cardsData);
         return (
             <div className="container">
+                <h1>Hello</h1>
                 <InfiniteScroll
-                    dataLength={this.cardsData.length}
+                    dataLength={cardsData.length}
                     next={this.loadCardsData}
                     hasMore={true}
                     loader={<h4>Loading...</h4>}>
-                        {cardsData.map(cardData => (<Card data={cardData}/>))}
+                        {cardsData.map((cardData, index) => (<Card key={index} data={cardData}/>))}
                 </InfiniteScroll>
             </div>
         );

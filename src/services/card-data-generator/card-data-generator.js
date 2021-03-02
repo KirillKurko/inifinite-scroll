@@ -4,7 +4,7 @@ export default class CardDataGenerator {
 
     _headerTextWordsLength = 3;
     _statusWordsLength = 3;
-    _logoLink = "./images/image.jpg";
+    _logoLink = `${process.env.PUBLIC_URL}/assets/images/image.jpg`
     _descriptionTextWordsLength = 8;
     _buttonTextWordsLength = 3;
     _linkTextWordsLength = 3;
@@ -30,6 +30,6 @@ export default class CardDataGenerator {
     }
 
     generateDate = () => {
-        return new Date(Date.now).toDateString();
+        return new Date(Date.now()).toDateString();
     }
 }
