@@ -7,4 +7,4 @@ Simple cards infinite scroll using React.
 
 ## Todo
 
-Need to fix styles and probably refactor App component.
+Need to fix styles.
