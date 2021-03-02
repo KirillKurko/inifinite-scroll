@@ -14,8 +14,8 @@ export default class CardDataGenerator {
             header: this.generateText(this._headerTextWordsLength),
             date: this.generateDate(),
             status: this.generateText(this._statusWordsLength),
-            descriptionText: this.generateText(this._descriptionTextWordsLength),
             logoLink: this._logoLink,
+            descriptionText: this.generateText(this._descriptionTextWordsLength),
             buttonText: this.generateText(this._buttonTextWordsLength),
             linkText: this.generateText(this.linkTextWordsLength)
         }
