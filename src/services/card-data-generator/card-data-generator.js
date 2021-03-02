@@ -21,7 +21,7 @@ export default class CardDataGenerator {
             logoLink: this._logoLink,
             descriptionText: this.generateText(this._descriptionTextWordsLength),
             buttonText: this.generateText(this._buttonTextWordsLength),
-            linkText: this.generateText(this.linkTextWordsLength)
+            linkText: this.generateText(this._linkTextWordsLength)
         }
     }
 

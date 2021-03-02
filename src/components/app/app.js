@@ -27,7 +27,6 @@ export default class App extends Component {
         console.log(cardsData);
         return (
             <div className="container">
-                <h1>Hello</h1>
                 <InfiniteScroll
                     dataLength={cardsData.length}
                     next={this.loadCardsData}
