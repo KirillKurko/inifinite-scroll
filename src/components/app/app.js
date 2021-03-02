@@ -1,4 +1,4 @@
-import {useState, Component} from "react";
+import {Component} from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Card from "../card";
 import CardDataGenerator from "../../services/card-data-generator";
@@ -10,17 +10,29 @@ export default class App extends Component {
     cardDataGenerator = new CardDataGenerator();
      
     state = {
-        
-        cardsData = 
+        defaultCardsAmount: this.props.defaultCardsAmount,
+        cardsData: this.cardDataGenerator.generateCardsData(this.props.defaultCardsAmount)
+    }
+
+    loadCardsData = () => {
+        const loadedCardsData = this.cardDataGenerator.generateCardsData(this.props.defaultCardsAmount);
+        setTimeout(() => {
+            this.setState({
+                cardsData: this.state.cardsData.concat(loadedCardsData)
+            });
+        }, 1500);
     }
 
     render() {
+        const {cardsData} = this.state;
         return (
             <div className="container">
                 <InfiniteScroll
                     dataLength={this.cardsData.length}
-                    next={this.get}>
-    
+                    next={this.loadCardsData}
+                    hasMore={true}
+                    loader={<h4>Loading...</h4>}>
+                        {cardsData.map(cardData => (<Card data={cardData}/>))}
                 </InfiniteScroll>
             </div>
         );
