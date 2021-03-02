@@ -9,6 +9,10 @@ export default class CardDataGenerator {
     _buttonTextWordsLength = 3;
     _linkTextWordsLength = 3;
 
+    generateCardsData = (cardsAmount) => {
+        return Array.from({length: cardsAmount}, this.generateCardData);
+    }
+
     generateCardData = () => {
         return {
             header: this.generateText(this._headerTextWordsLength),
